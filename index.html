@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longevity Food Score Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Calculate your longevity food score based on scientific research about food habits that promote longevity">
+</head>
+<body>
+    <div class="longevity-calculator">
+        <h2>Longevity Food Score Calculator</h2>
+        <p class="calculator-subtitle">Discover how your eating habits impact your longevity potential</p>
+        
+        <div class="calculator-form" id="calculatorForm">
+            <div class="food-category">
+                <h3>Beans & Legumes</h3>
+                <p>How often do you eat beans, lentils, or chickpeas?</p>
+                <div class="frequency-options">
+                    <div class="frequency-option">
+                        <input type="radio" id="beans-daily" name="beans" value="4">
+                        <label for="beans-daily">Daily</label>
+                    </div>
+                    <div class="frequency-option">
+                        <input type="radio" id="beans-weekly" name="beans" value="3">
+                        <label for="beans-weekly">3-6 times/week</label>
+                    </div>
+                    <div class="frequency-option">
+                        <input type="radio" id="beans-occasional" name="beans" value="2">
+                        <label for="beans-occasional">1-2 times/week</label>
+                    </div>
+                    <div class="frequency-option">
+                        <input type="radio" id="beans-rarely" name="beans" value="1">
+                        <label for="beans-rarely">Rarely</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="food-category">
+                <h3>Whole Grains</h3>
+                <p>How often do you eat whole grains like brown rice, oats, or whole wheat?</p>
+                <div class="frequency-options">
+                    <div class="frequency-option">
+                        <input type="radio" id="grains-daily" name="grains" value="4">
+                        <label for="grains-daily">Daily</label>
+                    </div>
+                    <div class="frequency-option">
+                        <input type="radio" id="grains-weekly" name="grains" value="3">
+                        <label for="grains-weekly">3-6 times/week</label>
+                    </div>
+                    <div class="frequency-option">
+                        <input type="radio" id="grains-occasional" name="grains" value="2">
+                        <label for="grains-occasional">1-2 times/week</label>
+                    </div>
+                    <div class="frequency-option">
+                        <input type="radio" id="grains-rarely" name="grains" value="1">
+                        <label for="grains-rarely">Rarely</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="food-category">
+                <h3>Nuts & Seeds</h3>
+                <p>How often do you eat nuts, seeds, or nut butters?</p>
+                <div class="frequency-options">
+                    <div class="frequency-option">
+                        <input type="radio" id="nuts-daily" name="nuts" value="4">
+                        <label for="nuts-daily">Daily</label>
+                    </div>
+                    <div class="frequency-option">
+                        <input type="radio" id="nuts-weekly" name="nuts" value="3">
+                        <label for="nuts-weekly">3-6 times/week</label>
+                    </div>
+                    <div class="frequency-option">
+                        <input type="radio" id="nuts-occasional" name="nuts" value="2">
+                        <label for="nuts-occasional">1-2 times/week</label>
+                    </div>
+                    <div class="frequency-option">
+                        <input type="radio" id="nuts-rarely" name="nuts" value="1">
+                        <label for="nuts-rarely">Rarely</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="food-category">
+                <h3>Berries & Fruits</h3>
+                <p>How often do you eat berries or other antioxidant-rich fruits?</p>
+                <div class="frequency-options">
+                    <div class="frequency-option">
+                        <input type="radio" id="fruits-daily" name="fruits" value="4">
+                        <label for="fruits-daily">Daily</label>
+                    </div>
+                    <div class="frequency-option">
+                        <input type="radio" id="fruits-weekly" name="fruits" value="3">
+                        <label for="fruits-weekly">3-6 times/week</label>
+                    </div>
+                    <div class="frequency-option">
+                        <input type="radio" id="fruits-occasional" name="fruits" value="2">
+                        <label for="fruits-occasional">1-2 times/week</label>
+                    </div>
+                    <div class="frequency-option">
+                        <input type="radio" id="fruits-rarely" name="fruits" value="1">
+                        <label for="fruits-rarely">Rarely</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="food-category">
+                <h3>Fatty Fish</h3>
+                <p>How often do you eat fatty fish like salmon, mackerel, or sardines?</p>
+                <div class="frequency-options">
+                    <div class="frequency-option">
+                        <input type="radio" id="fish-weekly" name="fish" value="4">
+                        <label for="fish-weekly">2+ times/week</label>
+                    </div>
+                    <div class="frequency-option">
+                        <input type="radio" id="fish-occasional" name="fish" value="3">
+                        <label for="fish-occasional">Once a week</label>
+                    </div>
+                    <div class="frequency-option">
+                        <input type="radio" id="fish-monthly" name="fish" value="2">
+                        <label for="fish-monthly">1-3 times/month</label>
+                    </div>
+                    <div class="frequency-option">
+                        <input type="radio" id="fish-rarely" name="fish" value="1">
+                        <label for="fish-rarely">Rarely</label>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="calculate-btn" id="calculateBtn">Calculate My Longevity Score</button>
+        </div>
+        
+        <div class="results-section" id="resultsSection">
+            <div class="score-display">
+                <div class="score-circle">
+                    <div class="score-value" id="scoreValue">0</div>
+                </div>
+                <div class="score-text" id="scoreText">Calculating...</div>
+            </div>
+            
+            <div class="recommendations">
+                <h3>Your Personalized Recommendations</h3>
+                <div id="recommendationsList">
+                    <!-- Recommendations will be inserted here -->
+                </div>
+            </div>
+            
+            <div class="comparison-chart">
+                <h3>How You Compare</h3>
+                <div class="chart-bar">
+                    <div class="chart-fill" id="userBar" style="width: 0%; background: #3498db;"></div>
+                    <div class="chart-label">Your Score: <span id="userScore">0</span>/100</div>
+                </div>
+                <div class="chart-bar">
+                    <div class="chart-fill" id="averageBar" style="width: 45%; background: #95a5a6;"></div>
+                    <div class="chart-label">Average: 45/100</div>
+                </div>
+                <div class="chart-bar">
+                    <div class="chart-fill" id="optimalBar" style="width: 85%; background: #2ecc71;"></div>
+                    <div class="chart-label">Optimal: 85/100</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="attribution">
+            <p>Based on research from <a href="https://healthiwellness.com/10-powerful-food-habits-that-promote-longevity-science-backed/" target="_blank">10 Powerful Food Habits That Promote Longevity</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
